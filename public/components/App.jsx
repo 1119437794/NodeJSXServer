@@ -16,16 +16,15 @@ class App extends Component {
                 config.map((item, index) => {
                     let Child = null;
                     const props = item.options;
-                    const componentName = 'Hello';
+                    const componentName = item.componentName;
 
                     try {
                         // TODO 使用import
-                        Child = require(`./${componentName}/${componentName}.jsx`);
+                        Child = require(`./${componentName}/${componentName}.jsx`).default;
                     } catch (error) {
+                        console.log('App.jsx', `${componentName}组件不存在！`)
                         return null;
                     }
-
-                    console.log('Child', Child);
 
                     return <Child
                         key={index}

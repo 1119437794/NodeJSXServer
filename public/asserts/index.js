@@ -3,16 +3,35 @@
  */
 const headers = new Headers();
 headers.append('Content-Type', 'application/json'); // 必须设置Content-Type 否则Node接收不到
-const req = new Request('/postPageConfig', {
-    headers: headers,
-    method: 'post',
-    body: JSON.stringify({
-        componentName: 'Tree'
-    })
+
+
+document.querySelector('.button').addEventListener('click', function () {
+    fetch('/download');
+    console.log(1010)
 });
 
-fetch(req)
-    .then(res => res.json())
-    .then(res => {
-        document.querySelector('p').innerText = res.componentName;
-});
+document.querySelector('select').addEventListener('change', function (e) {
+    const req = new Request('/postPageConfig', {
+        headers: headers,
+        method: 'post',
+        body: JSON.stringify({
+            componentName: e.target.value
+        })
+    });
+
+    fetch(req)
+        .then(res => res.json())
+        .then(res => {
+            document.querySelector('p').innerText = res.componentName;
+            try {
+                document.querySelector('#bundle').remove();
+            } catch (err) {
+                console.log('此节点不存在');
+            }
+
+            const script = document.createElement('script');
+            script.id = 'bundle';
+            script.src = res.url;
+            document.body.appendChild(script);
+        });
+})

@@ -3,12 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .box {
+            display: flex;
+        }
+
+        .left {
+            flex: 1;
+        }
+
+        .right {
+            flex: 2;
+        }
+
+    </style>
 </head>
 <body>
-<h1>Hello world</h1>
-<p></p>
-<div id="app"></div>
+<div class="box">
+    <div class="left">
+        <h1>Hello world</h1>
+        <p></p>
+
+        <select name="" id="">
+            <option value="Tree">Tree</option>
+            <option value="Hello">Hello</option>
+        </select>
+
+        <br>
+        <br>
+        <!-- 使用链接下载 -->
+        <a class="button" href="/download" download>下载资源文件</a>
+    </div>
+    <div class="right">
+        <div id="app"></div>
+    </div>
+</div>
+
 <script src="asserts/index.js"></script>
-<script src="asserts/bundle.js"></script>
+<script src="asserts/lib.js"></script>
 </body>
 </html>
