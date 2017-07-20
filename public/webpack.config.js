@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     // https://segmentfault.com/q/1010000008889633?_ea=1768854
     // devtool: 'cheap-source-map', // 方便debug
-
+    // TODO 必须是路径吗？！
     entry: __dirname + '/build/Index.jsx',
 
     output: {

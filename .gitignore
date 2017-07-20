@@ -1,3 +1,4 @@
 node_modules
 /public/asserts.zip
-/public/asserts/bundle.*
+/public/asserts/bundle.html
+/public/asserts/bundle.*.js
