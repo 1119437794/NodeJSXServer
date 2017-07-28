@@ -1,0 +1,22 @@
+.input {
+    @at-root {
+        &_root {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &_title {
+            width: 20%;
+        }
+
+        &_input {
+            width: 80%;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            outline: none;
+        }
+    }
+}
