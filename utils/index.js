@@ -66,7 +66,7 @@ module.exports = {
     bundleJSX (callback) {
         const hash = + new Date();
         const webpackConfigPath = `${__dirname.replace('utils', '')}public/webpack.config.js`;
-        const cmd = `export hash=${hash} && webpack --config ${webpackConfigPath}`;
+        const cmd = `set hash=${hash} && webpack --config ${webpackConfigPath}`;
         exec(cmd, err => {
             if (err) return console.log('bundleJSX', err);
             callback(hash);
